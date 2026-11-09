@@ -131,3 +131,5 @@ for region in sorted(sales_summary.keys()):
 """ #1. Bracket Notation is for when you know a key exists and you do not want to add in case of 
 crashing. get() is for when you want to add something when you think it is missing. I think
 you should assess the scenarios you have and see which one matters the most."""
+""" #2 It reminds me of using pivot tables in Excel. Python does the data sequentially which
+prevents crashes in the data."""
