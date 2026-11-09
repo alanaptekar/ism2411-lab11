@@ -95,3 +95,39 @@ for customer in customers:
     print(f"Discount: {discount_rate * 100:.0f}%")
     print(f"Final Price: ${final_price:.2f}")
     print()
+
+# --- Exercise 6 ---
+
+catalog = {
+    "Widget A": {"price": 9.99, "stock": 150}, 
+    "Gadget C": {"price": 49.99, "stock": 8}
+}
+
+for product, info in catalog.items():
+    if info["stock"] < 20:
+        print(f"LOW STOCK alert: {product} only has {info['stock']} items remaining.")
+
+# --- Exercise 7 ---
+
+transactions = [
+    {"region": "South", "amount": 300}, 
+    {"region": "North", "amount": 150}, 
+    {"region": "South", "amount": 200}
+]
+
+sales_summary = {}
+
+for tx in transactions:
+    region = tx["region"]
+    amount = tx["amount"]
+    # Accumulate the amount, defaulting to 0 if the region is not yet in the summary
+    sales_summary[region] = sales_summary.get(region, 0) + amount
+
+for region in sorted(sales_summary.keys()):
+    print(f"{region}: {sales_summary[region]}")
+
+# --- Exercise 8 ---
+
+""" #1. Bracket Notation is for when you know a key exists and you do not want to add in case of 
+crashing. get() is for when you want to add something when you think it is missing. I think
+you should assess the scenarios you have and see which one matters the most."""
